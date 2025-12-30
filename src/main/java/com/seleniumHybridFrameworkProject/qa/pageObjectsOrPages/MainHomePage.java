@@ -40,6 +40,9 @@ public class MainHomePage {
     @FindBy(xpath = "//a[@href = \"/checkboxes\" and text() = \"Checkboxes\"]")
     private WebElement checkboxesLink;
 
+    @FindBy(xpath = "//a[@href = \"/drag_and_drop\"]")
+    private WebElement dragAndDropPage;
+
 
 
     // Methods Section ------------------------------------------------------------------------------------------
@@ -82,6 +85,11 @@ public class MainHomePage {
     public CheckboxesPage navigateToCheckboxesPage(){
         checkboxesLink.click();
         return new CheckboxesPage(driver, utilities);
+    }
+
+    public DragAndDropPage navigateToDragAndDropPage(){
+        dragAndDropPage.click();
+        return new DragAndDropPage(driver, utilities);
     }
 
 
